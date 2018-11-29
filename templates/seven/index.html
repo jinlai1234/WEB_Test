@@ -1,0 +1,14 @@
+{% extends 'seven/base.html' %}
+{% block context %}
+    {{ block.super }}
+    {# 注意这里的enctype 在上传图片的时候必须带着，否则就会上传失败   #}
+    <form action="{% url 'seven:newimg' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <span>图片上传：</span>
+        <hr>
+        <input type="text" name="names" placeholder="请输入账户"><br>
+        <input type="file" name="imagess"><br>
+        <input type="submit" value="上传">
+    </form>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% comment %}
+多行注释，Cookies设置
+{% endcomment %}
+<form action="{% url 'three:login' %}" method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="请输入用户名" name="username">
+    <input type="submit" value="注册">
+</form>
+
+</body>
+</html>

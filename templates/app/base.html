@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    {% block base_css %}
+        <link rel="stylesheet" href={% static 'css/index.css' %}>
+    {% endblock %}
+</head>
+<body>
+{% block header %}
+
+{% endblock %}
+{% block banner %}
+
+{% endblock %}
+{% block contont %}
+    <p>11111base</p>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
+</body>
+</html>

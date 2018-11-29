@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StudentMessage</title>
+</head>
+<body>
+{% for students in studentss %}
+         <span>姓名：{{ students.s_name }}</span>
+         <span>班级：{{ students.s_grade.g_grade }}</span>
+{% endfor %}
+<hr>
+<form action="{% url 'two:add_del'%}" method='post'>
+    <input type="text" value="" placeholder="请输入您要删除或者创建的学生姓名" name="s_names">
+    <button>创建/删除</button>
+</form>
+
+</body>
+</html>

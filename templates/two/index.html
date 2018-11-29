@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grade</title>
+</head>
+<body>
+      <ul>
+          {% for foo in grade %}
+                   <li><a href="
+{% url 'two:getss' g_id=foo.id %}">{{ foo.g_grade }}</a></li>
+          {% endfor %}
+
+      </ul>
+</body>
+</html>

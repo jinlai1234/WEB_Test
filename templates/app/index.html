@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>app</title>
+</head>
+<body>
+<h1>获取学生</h1>
+<hr>
+<ul>
+    <span>直接循环获取的querset数据，forloop.cunter可以循环一个循环次数的标签[为了不用滑轮已经注释]</span>
+    {% for student in students %}
+        <li>{{ forloop.counter }}:{{ student.name }}</li>
+    {% endfor %}
+</ul>
+<hr>
+<span>可以充当字典的索引</span>
+<p>{{ students.0.name }}</p>
+<hr>
+<span>可以充当方法中额外字典的键</span>
+<p>{{ hobby.coding_time1 }}</p>
+<hr>
+<ul>
+    <span>获取为空的时候显示默认值 empty</span>
+    {% for student in student_none %}
+        <li>{{ student.name }}</li>
+    {% empty %}
+        <p>没有这个学生</p>
+    {% endfor %}
+</ul>
+<hr>
+<ul>
+    <!--我就是写个你们能看见的注释-->
+    <span>if语句</span>
+    {% for student in students %}
+        {% if forloop.first %}
+            <li style="color: red;">{{ student.name }}</li>
+        {% elif forloop.last %}
+            <li style="color: green;">{{ student.name }}</li>
+        {% else %}
+            <li>{{ student.name }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+<hr>
+<ul>
+    <!--我就是写个你们能看见的注释-->
+    <span>if语句</span>
+    {% for student in students %}
+        {% ifequal forloop.counter 5 %}
+            <p style="color: red">{{ student.name }}</p>
+        {% else %}
+            <p style="color: #4eff3c">{{ student.name }}</p>
+        {% endifequal %}
+    {% endfor %}
+</ul>
+<hr>
+<ul>
+    <!--我就是写个你们能看见的注释-->
+    <span>if语句</span>
+    {% for student in students %}
+        {#   widthratio 数据 分母  分子     #}
+        <!--加法：数字 | add:数值-->
+        <p>{% widthratio forloop.counter 1 2 %}</p>
+        {% if forloop.counter|divisibleby:2 %}
+            <p style="color: brown"> {{ student.name }}</p>
+        {% else %}
+            <p style="color: #4eff3c">{{ student.name }}</p>
+        {% endif %}
+    {% endfor %}
+</ul>
+<hr>
+
+</body>
+</html>
